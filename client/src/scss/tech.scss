@@ -1,0 +1,77 @@
+.t-wr {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    min-height: 100vh;
+    background: linear-gradient(black 0%, rgb(105, 173, 73) 100%);
+
+    .outer-container {
+        margin: 100px;
+        padding-bottom: 2rem;
+        width: 100%;
+        height: 100%;
+        display: flex;
+    }
+
+    .cards-wr {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        height: auto;
+        min-width: 50%;        
+        .cards-title {
+            width: 40%;
+        }
+        
+        .cards-container {
+            width: 100%;
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 40px 20px;
+            
+            .skill-card {
+                background: url('/stars.svg');
+                background-color: #202020;
+                background-repeat: no-repeat;
+                background-size: cover;
+                padding: 2rem;
+                transition: all 0.5s ease-in-out;
+                border: 3px solid #759c18c0;
+                display: flex;
+                flex-direction: column;
+                justify-content: space-between;
+                align-items: center;
+                min-height: 100px;
+                max-height: 200px;
+                height: 100%;
+                min-width: 200px;
+                max-width: 250px;
+                width: 100%;
+                border-radius: 15px;
+                // backdrop-filter: sepia();
+                box-shadow: 0px 12px 5px 0px rgba(0, 0, 0, 0.514);
+                &:nth-child(odd):hover {
+                    transform: rotate3d(1, -10, -1, 20deg) scale(1.1, 1.1);
+                }
+                &:nth-child(2n):hover {
+                    transform: rotate3d(1, -10, 1, 20deg) scale(1.1, 1.1);
+                }
+                img {
+                    width: 100px;
+                    height: 100px;
+                    // backdrop-filter: drop-shadow(4px 4px 10px blue);
+                    // filter:  contrast(2) ;
+                    justify-self: end;
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,31 @@
+
+
+.app-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  width: 100vw;
+  min-height: 100vh;
+  background-color: rgba(123, 31, 125, 0.43);
+  overflow: scroll;
+  
+  .title-wr {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    width: 100vw;
+    .title-cnt {
+      width: auto;
+      transition: all 1s ease-in-out;
+      font-family: system-ui;
+      height: auto;
+      color: seashell;
+      background-color: #f0e5e5ad;
+      border-radius: 15px 13px 10px 14px;
+      padding: 2em;
+      box-shadow: 2px 0px 0px 1px rgba(123, 142, 12), -4px 0px 0px 1px rgba(123, 142, 12);
+    }
+  }
+}
