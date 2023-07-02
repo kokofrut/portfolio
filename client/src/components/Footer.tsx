@@ -4,9 +4,8 @@ function Footer() {
     return (
         <div className="footer-wr">
             <div className="footer-container">
-
                 <div className="social-section">
-                    <p><a href="http://github.com/kokofrut/portfolio">Project Github</a></p>
+                    <p><a href="https://github.com/kokofrut/portfolio">Project Github</a></p>
                     <p><a href='https://t.me/kokofrut'>My Telegram</a></p>
                 </div>
                 <div id='map'>
