@@ -7,7 +7,7 @@ function Footer() {
 
                 <div className="social-section">
                     <p><a href="http://github.com/kokofrut/portfolio">Project Github</a></p>
-                    <p>My Telegram</p>
+                    <p><a href='https://t.me/kokofrut'>My Telegram</a></p>
                 </div>
                 <div id='map'>
                     <img src={map} alt='map' />
