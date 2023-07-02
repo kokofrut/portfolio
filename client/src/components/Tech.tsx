@@ -11,36 +11,39 @@ import nodeic from '/icons/icons8-nodejs.svg'
 function Tech() {
     return (
         <div className="t-wr" id="technologies">
+            <div className="title">
+                <p>Technologies</p>
+            </div>
             <motion.div className='outer-container' >
                 <div className='cards-wr'>
                     <div className='cards-title'>
                         <p>Frontend</p>
                     </div>
                     <motion.div className='cards-container'>
-                        <div className='skill-card'>
+                        <motion.div className='skill-card' whileInView={{ opacity: 1, transition: { duration: 1 } }}>
                             <img src={typescriptic} />
                             <p>Typescript</p>
-                        </div>
-                        <div className='skill-card'>
+                        </motion.div>
+                        <motion.div className='skill-card' whileInView={{ opacity: 1, transition: { duration: 1 } }}>
                             <img src={reactic} />
                             <p>React</p>
-                        </div>
-                        <div className='skill-card'>
+                        </motion.div>
+                        <motion.div className='skill-card' whileInView={{ opacity: 1, transition: { duration: 1 } }}>
                             <img src={muiic} />
                             <p>Material UI</p>
-                        </div>
-                        <div className='skill-card'>
+                        </motion.div>
+                        <motion.div className='skill-card' whileInView={{ opacity: 1, transition: { duration: 1 } }}>
                             <img src={figmaic} />
                             <p>Figma</p>
-                        </div>
-                        <div className='skill-card'>
+                        </motion.div>
+                        <motion.div className='skill-card' whileInView={{ opacity: 1, transition: { duration: 1 } }}>
                             <img src={reduxic} />
                             <p>Redux</p>
-                        </div>
-                        <div className='skill-card'>
+                        </motion.div>
+                        <motion.div className='skill-card' whileInView={{ opacity: 1, transition: { duration: 1 } }}>
                             <img src={sassic} />
                             <p>Saas</p>
-                        </div>
+                        </motion.div>
                     </motion.div>
                 </div>
                 <div className='cards-wr'>
@@ -48,14 +51,14 @@ function Tech() {
                         <p>Backend</p>
                     </div>
                     <motion.div className='cards-container'>
-                        <div className='skill-card'>
+                        <motion.div className='skill-card' whileInView={{ opacity: 1, transition: { duration: 1 } }}>
                             <img src={nodeic} />
                             <p>Node JS</p>
-                        </div>
-                        <div className='skill-card'>
+                        </motion.div>
+                        <motion.div className='skill-card' whileInView={{ opacity: 1, transition: { duration: 1 } }}>
                             <img src={nestic} />
                             <p>NestJS</p>
-                        </div>
+                        </motion.div>
                     </motion.div>
                 </div>
             </motion.div>
