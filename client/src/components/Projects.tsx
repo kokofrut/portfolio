@@ -1,7 +1,6 @@
-import React from 'react'
 import '../scss/projects.scss'
 import { motion } from 'framer-motion'
-import top_image from '../assets/stepper.svg'
+import top_image from '../assets/stepper2.svg'
 import editor from '../assets/editor.webp'
 import under_construction from '../assets/und-cnst.webp'
 import github from '../assets/github-mark-white.svg'
@@ -37,7 +36,7 @@ function Projects() {
                 Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
                 Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum</p>
             </div>
-            <div className="project-socials">
+            <div className="project-socials" data-placement="right">
               <div className="social-btn" onClick={() => { window.open('https://github.com/kokofrut/webster_front', '_blank') }}>
                 <p>CODE</p>
                 <img src={github} alt="githubLogo" />
@@ -63,7 +62,7 @@ function Projects() {
                 Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum</p>
             </div>
             <div className="project-socials">
-              <div className="social-btn" onClick={() => { window.open('https://github.com/kokofrut/portfolio', '_blank') }}>
+              <div className="social-btn"  onClick={() => { window.open('https://github.com/kokofrut/portfolio', '_blank') }}>
                 <p>CODE</p>
                 <img src={github} alt="githubLogo" />
               </div>

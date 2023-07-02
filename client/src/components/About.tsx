@@ -3,6 +3,7 @@ import { motion } from 'framer-motion'
 import me_image from '../assets/me.png'
 import back_image from '../assets/layered-peaks-haikei3.svg'
 import pdf_image from '../assets/pdf-icon.png'
+import map_outline from '../assets/map-outline2.svg'
 function About() {
     const handlePDF = () => {
         const pdfUrl = '/cv.pdf';
@@ -40,6 +41,7 @@ function About() {
 
             </motion.div>
             <div className="a-cnt-2">
+                <img src={map_outline} alt='outline' id='map_outline' />
                 <motion.div className='a-img-cnt'>
                     <motion.img
                         initial={{ transform: 'translateX(100%)' }}

@@ -34,7 +34,7 @@
         
         .project-container {
             margin: 4rem auto;
-            height: calc(50vh - 100px);
+            min-height: calc(50vh - 100px);
             width: 100%;
             display: flex;
 
@@ -75,6 +75,8 @@
                     height: 50px;
                     // background-color: rgba(128, 33, 175, 0.067);
                     display: flex;
+                    margin: 1rem 0;
+                    &[data-placement="right"] {justify-content: flex-end;}
                     column-gap: 1em;
                     .social-btn {
                         cursor: pointer;
@@ -103,12 +105,12 @@
                 width: 50%;
                 position: relative;
                 transition: all 0.4s ease-in-out;
-                // background-color: #424244f3;
-                
-                // border: 1px solid #ffffff90;
+                display: flex;
+                justify-content: center;
+                align-items: center;
                 img {
                     transition: all 0.4s ease-in-out;
-                    width: 100%;
+                    max-width: 100%;
                     height: 100%;
                     object-fit: contain;
                     transform: translateY(2%);
