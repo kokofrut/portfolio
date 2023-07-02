@@ -1,4 +1,5 @@
 import './App.scss'
+import { Analytics } from '@vercel/analytics/react';
 import Hello from './components/Hello'
 import Header from './components/Header'
 import About from './components/About'
@@ -17,6 +18,7 @@ function App() {
       <Projects />
       <Contact />
       <Footer />
+      <Analytics />
     </div>
   )
 }
