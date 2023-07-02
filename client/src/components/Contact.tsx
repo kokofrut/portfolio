@@ -1,4 +1,4 @@
-import { useRef, useState, FormEvent, useEffect } from 'react'
+import { useRef, useState, FormEvent } from 'react'
 import emailjs from '@emailjs/browser';
 import '../scss/contact.scss'
 function Contact() {
@@ -7,37 +7,26 @@ function Contact() {
     const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
         const { name, value } = e.target;
         setState(prevState => ({ ...prevState, [name]: value }));
-      };
-    
-      const handleInputFocus = (e: React.FocusEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+    };
+
+    const handleInputFocus = (e: React.FocusEvent<HTMLInputElement | HTMLTextAreaElement>) => {
         const parent = e.target.parentNode as HTMLElement;
         parent.classList.add('focused');
-      };
-    
-      const handleInputBlur = (e: React.FocusEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+    };
+
+    const handleInputBlur = (e: React.FocusEvent<HTMLInputElement | HTMLTextAreaElement>) => {
         const { value } = e.target;
         const parent = e.target.parentNode as HTMLElement;
         if (value === '') {
-          parent.classList.remove('focused');
+            parent.classList.remove('focused');
         }
-      };
-    
-      useEffect(() => {
-        const form = fref.current;
-        if (form) {
-          form.addEventListener('blur', handleInputBlur, true);
-        }
-        return () => {
-          if (form) {
-            form.removeEventListener('blur', handleInputBlur, true);
-          }
-        };
-      }, []);
+    };
+
     const sendEmail = (e: FormEvent<HTMLFormElement>) => {
         e.preventDefault();
         if (!fref.current) return
         console.log(fref.current)
-        emailjs.sendForm(import.meta.env.VITE_EMAILJS_SERVICE, import.meta.env.VITE_EMAILJS_TEMPLATE, fref.current, import.meta.env.VITE_EMAILJS_KEY)
+        emailjs.sendForm(import.meta.env.VITE_EMAILJS_SERVICE as string, import.meta.env.VITE_EMAILJS_TEMPLATE as string, fref.current, import.meta.env.VITE_EMAILJS_KEY as string)
             .then((result) => {
                 console.log(result.text);
             }, (error) => {
