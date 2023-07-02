@@ -2,8 +2,9 @@ import { useRef, useState, FormEvent } from 'react'
 import emailjs from '@emailjs/browser';
 import '../scss/contact.scss'
 function Contact() {
-    const [state, setState] = useState({ name: '', email: '', message: '' })
+    const [state, setState] = useState({ from_name: '', from_email: '', message: '' })
     const fref = useRef<HTMLFormElement>(null);
+    const btnref = useRef<HTMLButtonElement>(null);
     const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
         const { name, value } = e.target;
         setState(prevState => ({ ...prevState, [name]: value }));
@@ -24,12 +25,17 @@ function Contact() {
 
     const sendEmail = (e: FormEvent<HTMLFormElement>) => {
         e.preventDefault();
-        if (!fref.current) return
-        console.log(fref.current)
+        
+        if (!fref.current || !btnref.current) return
+        let button = btnref.current as HTMLButtonElement
+        button.innerHTML = 'Sending ...'
         emailjs.sendForm(import.meta.env.VITE_EMAILJS_SERVICE as string, import.meta.env.VITE_EMAILJS_TEMPLATE as string, fref.current, import.meta.env.VITE_EMAILJS_KEY as string)
             .then((result) => {
+                button.innerHTML = 'Email Sent!'
+                setState(prevState => ({ ...prevState, from_name: '', from_email: '', message: '' }));
                 console.log(result.text);
-            }, (error) => {
+            },
+             (error) => {
                 console.log(error.text);
             });
     };
@@ -39,29 +45,29 @@ function Contact() {
                 <form className="form" ref={fref} id="contact-form" onSubmit={sendEmail}>
                     <h2>Contact me</h2>
                     <div className="textfield">
-                        <label htmlFor="from_name" className={state.name !== '' ? 'focused' : ''}>
+                        <label htmlFor="from_name" className={state.from_name !== '' ? 'focused' : ''}>
                             Name
                         </label>
                         <input
                             required
                             type="text"
-                            name="name"
-                            value={state.name}
+                            name="from_name"
+                            value={state.from_name}
                             onChange={handleInputChange}
                             onFocus={handleInputFocus}
                             onBlur={handleInputBlur}
                         />
                     </div>
                     <div className="textfield">
-                        <label htmlFor="from_email" className={state.email !== '' ? 'focused' : ''}>
+                        <label htmlFor="from_email" className={state.from_email !== '' ? 'focused' : ''}>
                             Email
                         </label>
                         <input
                             required
                             autoComplete="email"
                             type="email"
-                            name="email"
-                            value={state.email}
+                            name="from_email"
+                            value={state.from_email}
                             onChange={handleInputChange}
                             onFocus={handleInputFocus}
                             onBlur={handleInputBlur}
@@ -83,7 +89,7 @@ function Contact() {
                             maxLength={500}
                         />
                     </div>
-                    <button type="submit" className="btn-submit">
+                    <button ref={btnref} type="submit" className="btn-submit" >
                         Send
                     </button>
                 </form>
