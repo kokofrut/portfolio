@@ -15,10 +15,15 @@
         margin: 110px auto;
 
         p {
+            @media screen and (max-width: 780px) {
+                font-size: 4rem;
+            }
+            @media screen and (min-width: 780px) {
+                font-size: 6rem;
+            }
             background-color: #1d1d1e;
             box-shadow: 1px 1px 1px 0px;
             padding: 0 2rem;
-            font-size: 6rem;
             font-weight: 300;
         }
     }
@@ -37,9 +42,31 @@
             min-height: calc(50vh - 100px);
             width: 100%;
             display: flex;
+            @media screen and (max-width: 780px) {
+                &[data-odd="true"] {
+                    flex-direction: column;
+                }
+                &[data-odd="false"] {
+                    flex-direction: column-reverse;
+                }
+                .text-section {
+                    width: 100%;
+                }
+                .project-card {
+                    width: 100%;
+                }
+            }
+            @media screen and (min-width: 780px) {
+                .text-section {
+                    width: 50%;
+                }
+                .project-card {
+                    width: 50%;
+                }
 
+            }
             .text-section {
-                width: 50%;
+                // width: 50%;
                 padding: 2rem;
                 display: flex;
                 flex-direction: column;
@@ -101,8 +128,7 @@
             }
 
             .project-card {
-                max-width: 1080px;
-                width: 50%;
+                // max-width: 1080px;
                 position: relative;
                 transition: all 0.4s ease-in-out;
                 display: flex;
