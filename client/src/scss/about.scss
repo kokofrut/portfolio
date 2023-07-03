@@ -21,11 +21,11 @@
         }
 
         .a-cnt-2 {
-            background-color: #49214A;
+            background: linear-gradient(#1d1d1e, black );
             width: 90%;
 
             #map_outline {
-                filter: drop-shadow(1px 1px 2px #fff5ee);
+                filter: drop-shadow(2px 1px 4px #fcfbfa);
             }
             img {
                 top: 100px;
@@ -121,7 +121,7 @@
             flex-direction: column;
             justify-content: flex-start;
             align-items: center;
-            background-color: #49214A;
+            background: linear-gradient(#49214A, #1d1d1e);
             position: relative;
 
             &::before {
