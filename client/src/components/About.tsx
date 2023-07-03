@@ -44,19 +44,19 @@ function About() {
                 <img src={map_outline} alt='outline' id='map_outline' />
                 <motion.div className='a-img-cnt'>
                     <motion.img
-                        initial={{ transform: 'translateX(100%)' }}
+                        initial={{ transform: 'translateX(50%)' }}
                         whileInView={{ transform: 'translateX(0)' }}
                         transition={{ duration: 0.6 }}
                         alt='me first'
                         src={me_image} />
                     <motion.img
-                        initial={{ transform: 'translateX(100%)' }}
+                        initial={{ transform: 'translateX(40%)' }}
                         transition={{ duration: 0.6, delay: 0.1 }}
                         whileInView={{ transform: 'translateX(0)' }}
                         alt='me second'
                         src={me_image} />
                     <motion.img
-                        initial={{ transform: 'translateX(100%)' }}
+                        initial={{ transform: 'translateX(30%)' }}
                         transition={{ duration: 0.6, delay: 0.2 }}
                         whileInView={{ transform: 'translateX(0)' }}
                         alt='me third'
