@@ -21,8 +21,8 @@ function About() {
                             transition: { duration: 1 }
                         }}
                         className="a-cnt">
-                        <p>I am</p>
-                        <p className="a-text">Frontend React Developer</p>
+                        <h1>I am</h1>
+                        <h1 className="a-text">Frontend React Developer</h1>
                     </motion.div>
                     <motion.div
                         whileInView={{
